@@ -6,22 +6,32 @@ import './App.css'
 
 class App extends Component {
   state = {
-    isLoggedIn: true,
-  }
-
-  renderAuthButton = () => {
-    const {isLoggedIn} = this.state
-    if (isLoggedIn === true) {
-      return <button type="button">Logout</button>
-    }
-    return <button type="button">Login</button>
+    isLoggedIn: false,
   }
 
   render() {
+    const {isLoggedIn} = this.state
+    // element variable
+    // let authButton
+    // if (isLoggedIn === true) {
+    //   authButton = <button type="button">Logout</button>
+    // } else {
+    //   authButton = <button type="button">Login</button>
+    // }
     return (
       <div className="container">
         <Welcome greeting="Hello" name="User" />
-        {this.renderAuthButton()}
+        {/* {authButton} */}
+        {/* //Ternary Operator */}
+        {/* {isLoggedIn ? (
+          <button type="button">Logout</button>
+        ) : (
+          <button type="button">LogIn</button>//null cal also be included in false
+        )} */}
+
+        {/* Logical && Operator */}
+        {isLoggedIn && <button type="button">Logout</button>}
+        {!isLoggedIn && <button type="button">LogIn</button>}
       </div>
     )
   }
