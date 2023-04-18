@@ -9,4 +9,8 @@ const Welcome = props => {
   )
 }
 
+Welcome.defaultProps = {
+  name: 'LawanGoud',
+  greeting: 'Hello',
+}
 export default Welcome
